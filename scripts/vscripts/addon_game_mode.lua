@@ -657,7 +657,7 @@ function InitVaribles()
 		[3] = {},
 	}
 	GameRules:GetGameModeEntity().enemy_spawned_wave = 0
-	GameRules:GetGameModeEntity():SetThink("DetectCheatsThinker")
+	
 	GameRules:GetGameModeEntity().is_boss_entered = false
 	GameRules:GetGameModeEntity().quest_status = {
 		q101 = true,
@@ -962,9 +962,9 @@ function InitVaribles()
 	}
 	GameRules:GetGameModeEntity().gem_difficulty_speed = {
 		[1] = 0.85,
-		[2] = 1.15,
-		[3] = 1.36,
-		[4] = 1.58
+		[2] = 1.16,
+		[3] = 1.38,
+		[4] = 1.60
 	}
 	GameRules:GetGameModeEntity().gem_difficulty_race = 1.15
 	GameRules:GetGameModeEntity().gem_difficulty_speed_race = 0.6
@@ -1898,7 +1898,7 @@ function InitVaribles()
 	}
 end
 function DetectCheatsThinker ()
-	if (Convars:GetBool("sv_cheats")) then
+	if GameRules:GetGameModeEntity().myself ~= true and (GameRules:IsCheatMode() == true or Convars:GetBool("sv_cheats")) then
 		zuobi()
 		return nil
 	end
@@ -1907,7 +1907,7 @@ end
 --辅助功能——作弊提示
 function zuobi()
 	GameRules:SendCustomMessage("#text_cheat_detected", 0, 0)
-	--GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
+	GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 	GameRules:GetGameModeEntity().is_cheat = true
 end
 --初始化2
@@ -2207,6 +2207,10 @@ function GemTD:OnLobster2(t)
 			GameRules:SetGameWinner(DOTA_TEAM_BADGUYS)
 			return
 		end
+	end
+
+	if GameRules:GetGameModeEntity().myself ~= true then
+		GameRules:GetGameModeEntity():SetThink("DetectCheatsThinker")
 	end
 
 	t["data"]["hehe"] = RandomInt(1,10000)
@@ -2888,7 +2892,7 @@ function OnThink()
 			    		maxhealth = maxhealth * 100000
 			    	end
 
-			    	speed_t = speed_t * 1.5
+			    	speed_t = speed_t * 1.8
 			    end
 
 				u:SetBaseMaxHealth(maxhealth)
@@ -7071,7 +7075,7 @@ function GemTD:OnCatchCrab(keys)
 	end
 	local user = keys.user
 
-	url = string.gsub(url,"gemtd/ranking/add/","gemtd/201808/ranking/add/")
+	url = string.gsub(url,"gemtd/ranking/add/","gemtd/201809/ranking/add/")
 	local r = RandomFloat(0,1)
 	
 	Timers:CreateTimer(r,function()

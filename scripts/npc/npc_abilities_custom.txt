@@ -8462,7 +8462,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"9 11 13 15"
+				"duration"	"7 9 11 13"
 			}
 			"02"
 			{
@@ -8608,7 +8608,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"duration"	"13 15 17 19"
+				"duration"	"9 11 13 15"
 			}
 			"02"
 			{
@@ -9039,7 +9039,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"slow_duration"	"12 14 16 18"
+				"slow_duration"	"10 12 14 16"
 			}
 			"04"
 			{
@@ -9254,7 +9254,7 @@
 			"03"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"slow_duration"	"16 18 20 22"
+				"slow_duration"	"12 14 16 18"
 			}
 			"04"
 			{
@@ -13421,7 +13421,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"konghe_damage_per"	"250"
+				"konghe_damage_per"	"200"
 			}
 			"03"
 			{
@@ -13507,7 +13507,7 @@
 			"02"
 			{
 				"var_type"	"FIELD_INTEGER"
-				"konghe_damage_per"	"500"
+				"konghe_damage_per"	"300"
 			}
 			"03"
 			{
@@ -14034,7 +14034,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"xuwu_duration"	"7 9 11 13"
+				"xuwu_duration"	"6 8 10 12"
 			}
 			"02"
 			{
@@ -14108,7 +14108,7 @@
 			"01"
 			{
 				"var_type"	"FIELD_FLOAT"
-				"xuwu_duration"	"11 15 19 23"
+				"xuwu_duration"	"7 10 13 16"
 			}
 			"02"
 			{
